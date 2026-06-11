@@ -34,6 +34,8 @@ public class Door : MonoBehaviour
     /// </summary>
     [SerializeField] private InputAction interactAction = new InputAction(type: InputActionType.Button);
 
+    
+
     /// <summary>
     /// Reference to the Animator component on this door.
     /// </summary>

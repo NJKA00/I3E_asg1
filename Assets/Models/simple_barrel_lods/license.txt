@@ -1,0 +1,8 @@
+Model Information:
+* title:	Simple Barrel (LODs)
+* source:	https://sketchfab.com/3d-models/simple-barrel-lods-fbc6cbebca3d45d4bbfe5aee8fd905c0
+* author:	trashbinkr (https://sketchfab.com/ChristopherKR)
+
+Model License:
+* license type:	SKETCHFAB Standard (https://sketchfab.com/licenses)
+* requirements:	Under basic restrictions, use worldwide, on all types of media, commercially or not, and in all types of derivative works

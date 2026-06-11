@@ -36,6 +36,11 @@ public class PlayerInteract : MonoBehaviour
     private Door currentDoor;
 
     /// <summary>
+    /// The currently targeted GunCollectible, if any.
+    /// </summary>
+    private GunCollectible currentGun;
+
+    /// <summary>
     /// Called when the script is first initialised.
     /// </summary>
     void Start()
@@ -58,17 +63,14 @@ public class PlayerInteract : MonoBehaviour
         Ray ray = playerCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
         RaycastHit hit;
 
-        Debug.DrawRay(ray.origin, ray.direction * interactRange, Color.red);
-
         if (Physics.Raycast(ray, out hit, interactRange))
         {
-            Debug.Log("Ray hit: " + hit.collider.gameObject.name);
-
             // Check for keycard
             KeycardCollectible keycard = hit.collider.GetComponentInParent<KeycardCollectible>();
             if (keycard != null)
             {
                 ClearDoorTarget();
+                ClearGunTarget();
                 if (currentKeycard != keycard)
                 {
                     ClearKeycardTarget();
@@ -83,11 +85,27 @@ public class PlayerInteract : MonoBehaviour
             if (door != null)
             {
                 ClearKeycardTarget();
+                ClearGunTarget();
                 if (currentDoor != door)
                 {
                     ClearDoorTarget();
                     currentDoor = door;
                     currentDoor.OnRaycastEnter(playerInventory);
+                }
+                return;
+            }
+
+            // Check for gun collectible
+            GunCollectible gun = hit.collider.GetComponentInParent<GunCollectible>();
+            if (gun != null)
+            {
+                ClearKeycardTarget();
+                ClearDoorTarget();
+                if (currentGun != gun)
+                {
+                    ClearGunTarget();
+                    currentGun = gun;
+                    currentGun.OnRaycastEnter();
                 }
                 return;
             }
@@ -126,11 +144,24 @@ public class PlayerInteract : MonoBehaviour
     }
 
     /// <summary>
+    /// Clears the current gun target and hides its prompt.
+    /// </summary>
+    private void ClearGunTarget()
+    {
+        if (currentGun != null)
+        {
+            currentGun.OnRaycastExit();
+            currentGun = null;
+        }
+    }
+
+    /// <summary>
     /// Clears all current targets.
     /// </summary>
     private void ClearAllTargets()
     {
         ClearKeycardTarget();
         ClearDoorTarget();
+        ClearGunTarget();
     }
 }
