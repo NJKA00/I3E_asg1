@@ -16,7 +16,7 @@ public class PlayerInteract : MonoBehaviour
     [SerializeField] private float interactRange = 2.5f;
 
     /// <summary>
-    /// The camera used to cast the interaction ray (first-person camera).
+    /// The camera used to cast the interaction ray 
     /// </summary>
     [SerializeField] private Camera playerCamera;
 
@@ -26,22 +26,22 @@ public class PlayerInteract : MonoBehaviour
     private PlayerInventory playerInventory;
 
     /// <summary>
-    /// The currently targeted KeycardCollectible, if any.
+    /// The currently targeted KeycardCollectible
     /// </summary>
     private KeycardCollectible currentKeycard;
 
     /// <summary>
-    /// The currently targeted Door, if any.
+    /// The currently targeted door
     /// </summary>
     private Door currentDoor;
 
     /// <summary>
-    /// The currently targeted GunCollectible, if any.
+    /// The currently targeted GunCollectible
     /// </summary>
     private GunCollectible currentGun;
 
     /// <summary>
-    /// Called when the script is first initialised.
+    /// Called when the game first starts
     /// </summary>
     void Start()
     {

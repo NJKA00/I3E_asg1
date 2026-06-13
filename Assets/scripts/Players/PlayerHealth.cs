@@ -12,32 +12,31 @@
     public class PlayerHealth : MonoBehaviour
     {
         /// <summary>
-        /// The player's maximum health.
+        /// Set player's max health
         /// </summary>
         [SerializeField] private float maxHealth = 100f;
         [SerializeField] private Slider healthBar;
         /// <summary>
-        /// Text displaying the player's current health value.
+        /// Displays the text (HP:xxx)
         /// </summary>
         [SerializeField] private TextMeshProUGUI healthText;
 
         /// <summary>
-        /// The player's current health.
+        /// player's current health
         /// </summary>
         private float currentHealth;
 
         /// <summary>
         /// Reference to the GameManager.
         /// </summary>
-        //private GameManager gameManager;
+        
 
         /// <summary>
-        /// Called when the script is first initialised.
+        /// Called when the script is first initialised to get player's health info
         /// </summary>
         void Start()
         {
             currentHealth = maxHealth;
-        // gameManager = FindObjectOfType<GameManager>();
             healthBar.value = currentHealth;
             healthText.text = "HP: " + Mathf.RoundToInt(currentHealth);
         }
@@ -62,7 +61,7 @@
         }
 
         /// <summary>
-        /// Returns the player's current health.
+        /// show the player's current health
         /// </summary>
         public float GetCurrentHealth()
         {
@@ -70,7 +69,7 @@
         }
 
         /// <summary>
-        /// Returns the player's maximum health.
+        /// show the player's maximum health
         /// </summary>
         public float GetMaxHealth()
         {
@@ -78,7 +77,7 @@
         }
 
         /// <summary>
-        /// Handles player death.
+        /// Plays when chatacyer dies
         /// </summary>
         private void Die()
         {

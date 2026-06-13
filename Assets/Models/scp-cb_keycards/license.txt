@@ -1,0 +1,11 @@
+Model Information:
+* title:	SCP-CB Keycards
+* source:	https://sketchfab.com/3d-models/scp-cb-keycards-5d8a08b9b2614a679612d8f9c6c781b9
+* author:	//A (https://sketchfab.com/Demonxp)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "SCP-CB Keycards" (https://sketchfab.com/3d-models/scp-cb-keycards-5d8a08b9b2614a679612d8f9c6c781b9) by //A (https://sketchfab.com/Demonxp) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

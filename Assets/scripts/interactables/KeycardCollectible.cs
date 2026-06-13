@@ -13,13 +13,13 @@ using UnityEngine.InputSystem;
 public class KeycardCollectible : MonoBehaviour
 {
     /// <summary>
-    /// The ID of this keycard (e.g. "Red", "Orange").
+    /// The ID of the keycard.
     /// Must match the requiredKeycardID on the corresponding Door.
     /// </summary>
     [SerializeField] private string keycardID = "Red";
 
     /// <summary>
-    /// Display name shown in UI prompts (e.g. "Red Keycard").
+    /// Display name shown in UI prompts like ( "Red Keycard").
     /// </summary>
     [SerializeField] private string keycardName = "Red Keycard";
 
@@ -54,6 +54,11 @@ public class KeycardCollectible : MonoBehaviour
     private PlayerInventory playerInventory;
 
     /// <summary>
+    /// Audio clip played when a keycard is collected
+    /// </summary>
+    [SerializeField] private AudioClip collectSFX;
+
+    /// <summary>
     /// Called when the object becomes enabled. Activates the interact input action.
     /// </summary>
     void OnEnable()
@@ -70,7 +75,7 @@ public class KeycardCollectible : MonoBehaviour
     }
 
     /// <summary>
-    /// Called every frame. Handles interact input.
+    /// Called every frame, handles interact input when character presses E to collect item
     /// </summary>
     void Update()
     {
@@ -81,7 +86,7 @@ public class KeycardCollectible : MonoBehaviour
     }
 
     /// <summary>
-    /// Called by PlayerInteract when the player's raycast hits this object.
+    /// Called by PlayerInteract when players looks at object using raycast
     /// Shows the interact prompt.
     /// </summary>
     /// <param name="inventory">The player's inventory script.</param>
@@ -95,7 +100,7 @@ public class KeycardCollectible : MonoBehaviour
     }
 
     /// <summary>
-    /// Called by PlayerInteract when the player's raycast stops hitting this object.
+    /// Called by PlayerInteract when stops looking at object using Raycast
     /// Hides the interact prompt.
     /// </summary>
     public void OnRaycastExit()
@@ -108,8 +113,9 @@ public class KeycardCollectible : MonoBehaviour
     }
 
     /// <summary>
-    /// Handles the collection of this keycard.
-    /// Registers it with the player's inventory, shows pickup message, and destroys this object.
+    /// Handles the collection of keycards
+    /// Registers it with the player's inventory and shows pickup message
+    /// plays collection SFX and destroys the card
     /// </summary>
     private void Collect()
     {
@@ -126,6 +132,10 @@ public class KeycardCollectible : MonoBehaviour
             Debug.LogWarning("KeycardCollectible: No UIManager assigned on " + keycardName);
 
         Debug.Log(keycardName + " collected!");
+
+        if (collectSFX != null)
+            AudioSource.PlayClipAtPoint(collectSFX, transform.position);
+
         Destroy(gameObject);
     }
 

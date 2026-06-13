@@ -1,0 +1,8 @@
+Model Information:
+* title:	Lunchtable
+* source:	https://sketchfab.com/3d-models/lunchtable-682097dd0d9d45b4a88e6284ba8d040f
+* author:	GonnabeOkay (https://sketchfab.com/GonnabeOkay)
+
+Model License:
+* license type:	SKETCHFAB Standard (https://sketchfab.com/licenses)
+* requirements:	Under basic restrictions, use worldwide, on all types of media, commercially or not, and in all types of derivative works

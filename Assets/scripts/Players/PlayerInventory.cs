@@ -10,7 +10,7 @@ using UnityEngine;
 public class PlayerInventory : MonoBehaviour
 {
     /// <summary>
-    /// List of keycard IDs the player currently holds (e.g. "Red", "Orange").
+    /// List of keycard IDs the player currently holds.
     /// </summary>
     private List<string> collectedKeycards = new List<string>();
 

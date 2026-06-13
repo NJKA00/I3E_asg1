@@ -16,12 +16,12 @@ public class DoorTriggerZone : MonoBehaviour
     [SerializeField] private Door door;
 
     /// <summary>
-    /// How long to wait before closing the door after the player exits.
+    /// How long to wait before closing the door after player exits trigger zone
     /// </summary>
     [SerializeField] private float closeDelay = 1f;
 
     /// <summary>
-    /// Called when an object exits the trigger zone.
+    /// Called when player exits the trigger zone.
     /// Closes the door after a short delay if the player walks away.
     /// </summary>
     /// <param name="other">The collider that exited.</param>
@@ -34,7 +34,7 @@ public class DoorTriggerZone : MonoBehaviour
     }
 
     /// <summary>
-    /// Waits briefly then tells the door to close.
+    /// Waits before closing the door.
     /// </summary>
     private IEnumerator DelayedClose()
     {

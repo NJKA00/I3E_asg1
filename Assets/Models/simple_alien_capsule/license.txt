@@ -1,0 +1,8 @@
+Model Information:
+* title:	Simple Alien capsule
+* source:	https://sketchfab.com/3d-models/simple-alien-capsule-364372f381584adc8f70f203d0e874ab
+* author:	trashbinkr (https://sketchfab.com/ChristopherKR)
+
+Model License:
+* license type:	SKETCHFAB Standard (https://sketchfab.com/licenses)
+* requirements:	Under basic restrictions, use worldwide, on all types of media, commercially or not, and in all types of derivative works
